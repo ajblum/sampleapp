@@ -7,6 +7,10 @@
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "http": "",
+    "pg": ""
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ajblum/sampleapp.git"
