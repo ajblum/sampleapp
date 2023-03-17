@@ -1,0 +1,34 @@
+services:
+  database:
+    image: "quay.io/ajblum/postgresql-13"
+    container_name: "sampleapp-db"
+    volumes:
+      - sampleapp-vol:/var/lib/pgsql/data
+    environment:
+      POSTGRESQL_USER: "user"
+      POSTGRESQL_DATABASE: "sampleapp"
+      POSTGRESQL_PASSWORD: "redhat"
+    networks:
+      sampleapp-net
+
+  sampleapp:
+    image: "quay.io/ajblum/sampleapp"
+    container_name: "sampleapp"
+    depends_on:
+      - database
+    environment:
+      PG_USER: "user"
+      PG_HOST: "sampleapp-db"
+      PG_DB: "sampleapp"
+      PG_PASS: "redhat"
+    networks:
+      sampleapp-net
+    ports:
+      - "3000:3000"
+
+volumes:
+  sampleapp-vol: {}
+
+networks:
+  sampleapp-net: {}
+
