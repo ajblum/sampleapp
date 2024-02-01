@@ -6,7 +6,7 @@ a helloworld message after successfully connecting to a postgres database"
 # some environment variable used to configure the database connection
 
 ENV PG_USER="myuser" \
-    PG_HOST="myhost" \
+    PG_HOST="localhost" \
     PG_DB="mydb" \
     PG_PASS="mypass"
 
