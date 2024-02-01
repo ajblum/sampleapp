@@ -10,7 +10,7 @@ const port = 3000;
 //getting pg database connection details
 
 const pguser = process.env.PG_USER || 'myuser';
-const pghost = process.env.PG_HOST || 'myhost';
+const pghost = process.env.PG_HOST || 'localhost';
 const pgdb = process.env.PG_DB || 'mydb';
 const pgpass = process.env.PG_PASS || 'mypass';
 
